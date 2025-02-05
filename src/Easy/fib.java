@@ -9,7 +9,7 @@ class Solution2 {
         }
         int f=0;
         int s=1;
-        for (i=1; i<=n; i++){
+        for (int i=1; i<=n; i++){
             int t=f+s;
             f=s;
             s=f;
