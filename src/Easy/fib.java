@@ -12,7 +12,7 @@ class Solution2 {
         for (int i=1; i<=n; i++){
             int t=f+s;
             f=s;
-            s=f;
+            s=t;
         }
         return f;
     }
