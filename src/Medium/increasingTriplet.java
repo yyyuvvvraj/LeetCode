@@ -18,4 +18,24 @@ public class increasingTriplet {
         }
         return false;
     }
+    //Alternatively
+    class Solution {
+        public boolean increasingTriplet(int[] nums) {
+            int first = Integer.MAX_VALUE;
+            int second = Integer.MAX_VALUE;
+
+            for (int num : nums) {
+                if (num <= first) {
+                    first = num;    // num is now the smallest value
+                } else if (num <= second) {
+                    second = num;   // num is bigger than first but smaller than second
+                } else {
+                    // num is bigger than both first and second
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
 }
