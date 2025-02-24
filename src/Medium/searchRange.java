@@ -12,7 +12,7 @@ public class searchRange {
     }
     public int firstOccurence(int[] nums,int target){
         int start=0;
-        int end=nums.length;
+        int end=nums.length-1;
         int ans=-1;
         while(start<=end){
             int mid=(start+end)/2;
@@ -29,7 +29,7 @@ public class searchRange {
     }
     public int lastOccurence(int[] nums,int target){
         int start=0;
-        int end=nums.length;
+        int end=nums.length-1;
         int ans=-1;
         while(start<=end){
             int mid=(start+end)/2;
