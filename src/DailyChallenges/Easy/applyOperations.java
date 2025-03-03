@@ -1,4 +1,4 @@
-package DailyChallenges;
+package DailyChallenges.Easy;
 //Problem-2460
 public class applyOperations {
     public int[] applyOperations(int[] nums) {

@@ -1,4 +1,4 @@
-package DailyChallenges;
+package DailyChallenges.Easy;
 //Problem-2570
 import java.util.ArrayList;
 import java.util.List;

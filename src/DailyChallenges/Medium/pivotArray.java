@@ -1,4 +1,4 @@
-package DailyChallenges;
+package DailyChallenges.Medium;
 //Problem-2161
 public class pivotArray {
     public int[] pivotArray(int[] nums, int pivot) {
