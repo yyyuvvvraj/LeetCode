@@ -20,7 +20,7 @@ public class MyStack {
             helper.add(main.remove());
         }
         //add X in main queue
-        main.add(X);
+        main.add(x);
         //moving all elements from helper to main
         while(helper.size()>0){
             main.add(helper.remove());
