@@ -1,0 +1,23 @@
+package DailyChallenges.Hard;
+//Problem-2444
+public class countSubarryas {
+    public long countSubarrays(int[] nums, int minK, int maxK) {
+        long ans=0;
+        int j=-1;
+        int prevMinKIndex=-1;
+        int prevMaxKIndex=-1;
+        for(int i=0;i<nums.length;++i){
+            if(nums[i]<minK||nums[i]>maxK){
+                j=i;
+            }
+            if(nums[i]==minK){
+                prevMinKIndex=i;
+            }
+            if(nums[i]==maxK){
+                prevMaxKIndex=i;
+            }
+            ans+=Math.max(0,Math.min(prevMinKIndex,prevMaxKIndex)-j);
+        }
+        return ans;
+    }
+}
