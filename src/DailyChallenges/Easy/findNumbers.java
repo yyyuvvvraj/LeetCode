@@ -1,13 +1,21 @@
 package DailyChallenges.Easy;
 //Problem-1295
 public class findNumbers {
-    public int findNumbers(int[] nums) {
-        int ans=0;
-        for(int num:nums){
-            if(9<num&&num<100||999<num&&num<1000||num==100000){
-                ++ans;
+    class Solution {
+        public int findNumbers(int[] nums) {
+            int ans = 0;
+            for (int num : nums) {
+                int count = 0;
+                while (num > 0) {
+                    num /= 10;
+                    count++;
+                }
+                if (count % 2 == 0) {
+                    ans++;
+                }
             }
+            return ans;
         }
-        return ans;
     }
+
 }
