@@ -8,16 +8,19 @@ import java.util.List;
 //Problem-2901
 public class getWordsInLongestSubsequence {
     class Solution {
-        public List<String> getWordsInLongestSubsequence(int n, String[] words, int[] groups) {
+        public List<String> getWordsInLongestSubsequence(String[] words, int[] groups) {
+            int n = words.length;
             List<String> ans = new ArrayList<>();
-            // dp[i] := the length of the longest subsequence ending in `words[i]`
+
+            // dp[i] := the length of the longest subsequence ending in words[i]
             int[] dp = new int[n];
             Arrays.fill(dp, 1);
-            // prev[i] := the best index of words[i]
+
+            // prev[i] := the best previous index for words[i]
             int[] prev = new int[n];
             Arrays.fill(prev, -1);
 
-            for (int i = 1; i < n; ++i)
+            for (int i = 1; i < n; ++i) {
                 for (int j = 0; j < i; ++j) {
                     if (groups[i] == groups[j])
                         continue;
@@ -30,8 +33,9 @@ public class getWordsInLongestSubsequence {
                         prev[i] = j;
                     }
                 }
+            }
 
-            // Find the last index of the subsequence.
+            // Find the last index of the longest subsequence.
             int index = getMaxIndex(dp);
             while (index != -1) {
                 ans.add(words[index]);
@@ -42,7 +46,7 @@ public class getWordsInLongestSubsequence {
             return ans;
         }
 
-        private int hammingDist(final String s1, final String s2) {
+        private int hammingDist(String s1, String s2) {
             int dist = 0;
             for (int i = 0; i < s1.length(); ++i)
                 if (s1.charAt(i) != s2.charAt(i))
@@ -52,10 +56,11 @@ public class getWordsInLongestSubsequence {
 
         private int getMaxIndex(int[] dp) {
             int maxIndex = 0;
-            for (int i = 0; i < dp.length; ++i)
+            for (int i = 1; i < dp.length; ++i)
                 if (dp[i] > dp[maxIndex])
                     maxIndex = i;
             return maxIndex;
         }
     }
+
 }
